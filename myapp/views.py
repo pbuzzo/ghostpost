@@ -7,7 +7,8 @@ import webbrowser as wb
 
 def index(request):
     html = 'index.html'
-    # Use .order_by()
+    # Use .order_by(), sort by date of submission
+    # https://stackoverflow.com/questions/38705451/django-sorting-by-dateday
     posts = PostInput.objects.all().order_by('-date')
 
     return render(
