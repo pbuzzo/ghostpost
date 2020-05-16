@@ -1,5 +1,5 @@
 from django.contrib import admin
-from myapp.models import ModelName
+from myapp.models import PostInput
 
-admin.site.register(ModelName)
+admin.site.register(PostInput)
 

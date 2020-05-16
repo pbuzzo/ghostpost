@@ -1,0 +1,49 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<HR>
+    <div class="post_box">
+        <div class="flex-cont-one">
+            <div class="flex-cont-two">
+                {% if post.post_type %}
+                    <div class="inline boast-title">
+                        <img src="../static/css/gh1.png">
+                        &nbsp;&nbsp;&nbsp;
+                        <h3 style="text-transform:capitalize;">{{ post.title }}</h3>
+                    </div>
+                {% elif not post.post_type %}
+                    <div class="inline roast-title">
+                        <img src="../static/css/gh1.png">
+                        &nbsp;&nbsp;&nbsp;
+                        <h3 style="text-transform:capitalize;">{{ post.title }}</h3>
+                    </div>
+                {% endif %}
+                <p>{{ post.text }}</p>
+                <p>Date: {{ post.date }}</p>
+                <p>{{ post.post_key }}</p>
+                {% if post.post_type %}
+                    <p>Boast</p>
+                {% elif not post.post_type %}
+                    <p>Roast</p>
+                {% endif %}
+                <div>
+                    <button>
+                        <a href="/upvote/{{post.id}}">👍&nbsp;{{ post.upvotes }}</a>
+                    </button>
+                    <button>
+                        <a href="/downvote/{{post.id}}">👎&nbsp;{{ post.downvotes }}</a>
+                    </button>
+                    <button>
+                        <a href="/">Back To GhostPosts</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <HR>

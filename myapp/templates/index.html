@@ -1,1 +1,196 @@
-<p>Hello World!</p>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<html>
+    <!-- {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul> -->
+    {% endif %}
+    <h1>GhostPost</h1>
+    <h3><a href="{% url 'add post' %}">Create A New Ghost Post</a></h3>
+    <HR>
+    <h5>Search By:</h5>
+    <button>
+        <a href='/roasts/'>Roasts</a>
+    </button>
+    <button>
+        <a href='/boasts/'>Boasts</a>
+    </button>
+    <button>
+        <a href='/votes/'>Votes</a>
+    </button>
+    <button>
+        <a href='/'>Posts</a>
+    </button>
+    {% if posts %}
+        {% for item in posts %}
+        <HR>
+        <div class="post_box">
+            <div class="flex-cont-one">
+                <div class="flex-cont-two">
+                    {% if item.post_type %}
+                        <div class="inline boast-title">
+                            <img src="../static/css/gh1.png">
+                            &nbsp;&nbsp;&nbsp;
+                            <h3 style="text-transform:capitalize;">{{ item.title }}</h3>
+                        </div>
+                    {% elif not item.post_type %}
+                        <div class="inline roast-title">
+                            <img src="../static/css/gh1.png">
+                            &nbsp;&nbsp;&nbsp;
+                            <h3 style="text-transform:capitalize;">{{ item.title }}</h3>
+                        </div>
+                    {% endif %}
+                    <p>{{ item.text }}</p>
+                    <p>Date: {{ item.date }}</p>
+                    <p>{{ item.post_key }}</p>
+                    {% if item.post_type %}
+                        <p>Boast</p>
+                    {% elif not item.post_type %}
+                        <p>Roast</p>
+                    {% endif %}
+                    <div>
+                        <button>
+                            <a href="/upvote/{{item.id}}">👍&nbsp;{{ item.upvotes }}</a>
+                        </button>
+                        <button>
+                            <a href="/downvote/{{item.id}}">👎&nbsp;{{ item.downvotes }}</a>
+                        </button>
+                        <button>
+                            <a href="{% url 'post info' item.id %}">Post Info</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <HR>
+        {% endfor %}
+    {% elif votes %}
+        {% for item in votes %}
+        <HR>
+        <div class="post_box">
+            <div class="flex-cont-one">
+                <div class="flex-cont-two">
+                    {% if item.post_type %}
+                        <div class="inline boast-title">
+                            <img src="../static/css/gh1.png">
+                            &nbsp;&nbsp;&nbsp;
+                            <h3 style="text-transform:capitalize;">{{ item.title }}</h3>
+                        </div>
+                    {% elif not item.post_type %}
+                        <div class="inline roast-title">
+                            <img src="../static/css/gh1.png">
+                            &nbsp;&nbsp;&nbsp;
+                            <h3 style="text-transform:capitalize;">{{ item.title }}</h3>
+                        </div>
+                    {% endif %}
+                    <p>{{ item.text }}</p>
+                    <p>Date: {{ item.date }}</p>
+                    {% if item.post_type %}
+                        <p>Boast</p>
+                    {% elif not item.post_type %}
+                        <p>Roast</p>
+                    {% endif %}
+                    <div>
+                        <button>
+                            <a href="/upvote/{{item.id}}">👍&nbsp;{{ item.upvotes }}</a>
+                        </button>
+                        <button>
+                            <a href="/downvote/{{item.id}}">👎&nbsp;{{ item.downvotes }}</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <HR>
+        {% endfor %}
+    {% elif boasts %}
+        {% for item in boasts %}
+        <HR>
+        <div class="post_box">
+            <div class="flex-cont-one">
+                <div class="flex-cont-two">
+                    {% if item.post_type %}
+                        <div class="inline boast-title">
+                            <img src="../static/css/gh1.png">
+                            &nbsp;&nbsp;&nbsp;
+                            <h3 style="text-transform:capitalize;">{{ item.title }}</h3>
+                        </div>
+                    {% elif not item.post_type %}
+                        <div class="inline roast-title">
+                            <img src="../static/css/gh1.png">
+                            &nbsp;&nbsp;&nbsp;
+                            <h3 style="text-transform:capitalize;">{{ item.title }}</h3>
+                        </div>
+                    {% endif %}
+                    <p>{{ item.text }}</p>
+                    <p>Date: {{ item.date }}</p>
+                    {% if item.post_type %}
+                        <p>Boast</p>
+                    {% elif not item.post_type %}
+                        <p>Roast</p>
+                    {% endif %}
+                    <div>
+                        <button>
+                            <a href="/upvote/{{item.id}}">👍&nbsp;{{ item.upvotes }}</a>
+                        </button>
+                        <button>
+                            <a href="/downvote/{{item.id}}">👎&nbsp;{{ item.downvotes }}</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <HR>
+        {% endfor %}
+    {% elif roasts %}
+        {% for item in roasts %}
+        <HR>
+        <div class="post_box">
+            <div class="flex-cont-one">
+                <div class="flex-cont-two">
+                    {% if item.post_type %}
+                        <div class="inline boast-title">
+                            <img src="../static/css/gh1.png">
+                            &nbsp;&nbsp;&nbsp;
+                            <h3 style="text-transform:capitalize;">{{ item.title }}</h3>
+                        </div>
+                    {% elif not item.post_type %}
+                        <div class="inline roast-title">
+                            <img src="../static/css/gh1.png">
+                            &nbsp;&nbsp;&nbsp;
+                            <h3 style="text-transform:capitalize;">{{ item.title }}</h3>
+                        </div>
+                    {% endif %}
+                    <p>{{ item.text }}</p>
+                    <p>Date: {{ item.date }}</p>
+                    {% if item.post_type %}
+                        <p>Boast</p>
+                    {% elif not item.post_type %}
+                        <p>Roast</p>
+                    {% endif %}
+                    <div>
+                        <button>
+                            <a href="/upvote/{{item.id}}">👍&nbsp;{{ item.upvotes }}</a>
+                        </button>
+                        <button>
+                            <a href="/downvote/{{item.id}}">👎&nbsp;{{ item.downvotes }}</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <HR>
+        {% endfor %}
+    {% endif %}
+</html>
+
