@@ -8,12 +8,12 @@
 </head>
 
 <html>
-    <!-- {% if messages %}
+    {% if messages %}
     <ul class="messages">
         {% for message in messages %}
         <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
-    </ul> -->
+    </ul>
     {% endif %}
     <h1>GhostPost</h1>
     <h3><a href="{% url 'add post' %}">Create A New Ghost Post</a></h3>
@@ -52,7 +52,6 @@
                     {% endif %}
                     <p>{{ item.text }}</p>
                     <p>Date: {{ item.date }}</p>
-                    <p>{{ item.post_key }}</p>
                     {% if item.post_type %}
                         <p>Boast</p>
                     {% elif not item.post_type %}

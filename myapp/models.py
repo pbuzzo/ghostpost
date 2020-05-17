@@ -13,7 +13,6 @@ class PostInput(models.Model):
     post_key = models.CharField(
         max_length=6,
         blank=True,
-        unique=True,
         default=get_random_string(6).lower(),
         editable=False
     )

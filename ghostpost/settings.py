@@ -22,6 +22,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'yee-+-1h%ii4byzey(@)d**^$y+tgwzbb_1livjl@p3tprg2at'
 
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+# demo Kenzie Project email for extra credit purposes
+EMAIL_HOST_USER = 'pbghostpost@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'lnmyudpwxhvffdjw'
+
+DEFAULT_FROM_EMAIL = 'pbghostpost@gmail.com'
+
+DEFAULT_TO_EMAIL = 'pbghostpost@gmail.com'
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

@@ -3,6 +3,8 @@ from myapp.models import PostInput
 from myapp.forms import PostForm
 from django.contrib import messages
 import webbrowser as wb
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def index(request):
@@ -24,14 +26,22 @@ def addpost(request):
         form = PostForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
+            title = data['title']
             PostInput.objects.create(
                 title=data['title'],
                 text=data['text'],
-                post_type=data['post_type'],
+                post_type=data['post_type']
             )
-            messages.success(
-                request,
-                'Your password has been changed successfully!'
+            usr_email = data['email']
+            unique_id = PostInput.objects.get(title=title)
+            message = f'Your password has been changed successfully! Your new delete ID for your post "{title}" is {unique_id.post_key}. Enter it into the following GhostPost URL to access your post-deletion page. Thanks for posting!'
+            # http://sayhelloworld.co/build-a-simple-django-contact-form-that-sends-emails/
+            send_mail(
+                'Contact Form',
+                message,
+                settings.EMAIL_HOST_USER,
+                [usr_email],
+                fail_silently=False
             )
             return HttpResponseRedirect(reverse("homepage"))
     form = PostForm()
