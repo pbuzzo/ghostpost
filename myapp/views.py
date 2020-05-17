@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, HttpResponseRedirect
+from django.shortcuts import render, reverse, HttpResponseRedirect, get_object_or_404
 from myapp.models import PostInput
 from myapp.forms import PostForm
 from django.contrib import messages
@@ -107,8 +107,8 @@ def vote_posts(request):
 
 def posts_delete_view(request, id=None):
 
-    # post = get_object_or_404(PostInput, post_key=id)
-    post = PostInput.objects.get(post_key=id)
+    post = get_object_or_404(PostInput, post_key=id)
+    # post = PostInput.objects.get(post_key=id)
 
     if request.method == "POST":
         post.delete()

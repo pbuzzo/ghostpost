@@ -5,14 +5,18 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 
-<h1>Create A Ghost Post</h1>
-<h3><a href="{% url 'homepage' %}">Homepage</a></h3>
-<p>After creation, you will be emailed a unique post ID that you will be able to enter into the following url, in order to receive delete access to your post. Please keep this unique ID confidential. Check both spam and inbox folders for email. </p>
-<h4>URL: http://127.0.0.1:8000/{UniqueID}/delete/</h4>
-<HR><HR>
+<html>
+    <div class="form">
+        <h1>Create A Ghost Post</h1>
+        <h3><a href="{% url 'homepage' %}">Homepage</a></h3>
+        <p>After creation, you will be emailed a unique post ID that you will be able to enter into the following url, in order to receive delete access to your post. Please keep this unique ID confidential. Check both spam and inbox folders for email. </p>
+        <h4>URL: http://127.0.0.1:8000/{UniqueID}/delete/</h4>
+        <HR><HR>
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }} 
-    <input type="submit" value="Sumbit GhostPost" onsubmit="">
-</form>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }} 
+            <input type="submit" value="Sumbit GhostPost" onsubmit="">
+        </form>
+    </body>
+</html>
