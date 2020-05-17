@@ -1,8 +1,7 @@
-from django.shortcuts import render, reverse, HttpResponseRedirect, get_object_or_404
+from django.shortcuts import render, reverse, HttpResponseRedirect
 from myapp.models import PostInput
 from myapp.forms import PostForm
 from django.contrib import messages
-import webbrowser as wb
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -34,7 +33,7 @@ def addpost(request):
             )
             usr_email = data['email']
             unique_id = PostInput.objects.get(title=title)
-            message = f'Your password has been changed successfully! Your new delete ID for your post "{title}" is {unique_id.post_key}. Enter it into the following GhostPost URL to access your post-deletion page. Thanks for posting!'
+            message = f'Your password has been changed successfully! Your new delete URL for your post "{title}" is http://127.0.0.1:8000/{unique_id.post_key}/delete/. Enter it into your browser to access your post-deletion page. Thanks for posting!'
             # http://sayhelloworld.co/build-a-simple-django-contact-form-that-sends-emails/
             send_mail(
                 'Contact Form',
@@ -108,12 +107,12 @@ def vote_posts(request):
 
 def posts_delete_view(request, id=None):
 
-    post = get_object_or_404(PostInput, post_key=id)
+    # post = get_object_or_404(PostInput, post_key=id)
+    post = PostInput.objects.get(post_key=id)
 
     if request.method == "POST":
         post.delete()
         messages.success(request, "Post successfully deleted!")
-        wb.open_new_tab('http://net-informations.com', new=2)
         return HttpResponseRedirect("/")
 
     posts = PostInput.objects.all().order_by('-date')

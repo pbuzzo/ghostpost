@@ -8,13 +8,6 @@
 </head>
 
 <html>
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
     <h1>GhostPost</h1>
     <h3><a href="{% url 'add post' %}">Create A New Ghost Post</a></h3>
     <HR>
