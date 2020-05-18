@@ -29,7 +29,8 @@ def addpost(request):
             PostInput.objects.create(
                 title=data['title'],
                 text=data['text'],
-                post_type=data['post_type']
+                post_type=data['post_type'],
+                image=data['image']
             )
             usr_email = data['email']
             unique_id = PostInput.objects.get(title=title)

@@ -16,6 +16,5 @@ class PostInput(models.Model):
         default=get_random_string(6).lower(),
         editable=False
     )
-
     def __str__(self):
         return self.title
