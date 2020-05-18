@@ -29,13 +29,13 @@ EMAIL_HOST = 'smtp.gmail.com'
 
 EMAIL_PORT = 587
 # demo Kenzie Project email for extra credit purposes
-EMAIL_HOST_USER = 'pbghostpost@gmail.com'
+EMAIL_HOST_USER = 'kenziepbghostpost@gmail.com'
 
-EMAIL_HOST_PASSWORD = 'lnmyudpwxhvffdjw'
+EMAIL_HOST_PASSWORD = 'kmbkxddgqzqnkjlk'
 
-DEFAULT_FROM_EMAIL = 'pbghostpost@gmail.com'
+DEFAULT_FROM_EMAIL = 'kenziepbghostpost@gmail.com'
 
-DEFAULT_TO_EMAIL = 'pbghostpost@gmail.com'
+DEFAULT_TO_EMAIL = 'kenziepbghostpost@gmail.com'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
