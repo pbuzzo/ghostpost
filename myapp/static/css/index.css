@@ -4,7 +4,10 @@ html {
 
 
 HR {
-    width: 100%;
+    width: 80%;
+    text-align: left;
+    padding-right: 40px;
+    margin-left: 5px;
 }
 
 .buttons {
@@ -13,11 +16,14 @@ HR {
 
 .form {
     margin-left: 20px;
+    background: blur(8px);
 }
 
 
 button {
     border-radius: 30px; /* Curve of border corners */
+    
+    border: 1px solid black;
  
     text-transform: uppercase; /* Make letters uppercase */
     
@@ -47,18 +53,26 @@ button {
 }
 
 
-h1, h2, h3, h4, p {
+h1, h2, p {
     font-family: "Raleway", sans-serif;
     margin-left: 20px;
+    text-shadow: 5px 5px 7px white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+h4 {
+    color: white;
 }
 
 h3 {
-    text-shadow: 2px 2px 4px #ffffff;
+    font-family: "Raleway", sans-serif;
+    margin-left: 20px;
+    text-shadow: 5px 5px 7px white, 0 1px white, 1px 0 white, 0 -1px white;
+    /* text-shadow: 5px 5px 7px #ffffff; */
 }
 
 body {
     font-family: "Raleway", sans-serif;
-    background: rgb(216, 142, 136);
+    background-image: url('https://revelwallpapers.net/media/wallpapers/tree-chair-alone-night-park.jpg');
 }
 
 
@@ -95,16 +109,24 @@ body {
 /* css for header by Ben Szabo: https://codepen.io/finnhvman/pen/BGmygj */
 
 .contone {
+    display: flex;
     padding-top: 10px;
     padding-left: 20px;
-  }
+    padding-bottom: 10px;
+    background-color: #71b8de;
+    width: 50%;
+    height: 100px;
+    box-shadow: 0 0 15px, -1em 0 7.0em #71b8de;
+    border: 1px solid white;
+}
   
   .deconstructed {
     position: relative;
     margin: auto;
     height: 1em;
     color: transparent;
-    font-family: 'Cambay', sans-serif;
+    font-family: 'Herculanum', fantasy;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
     font-size: 4vw;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -124,30 +146,30 @@ body {
   .deconstructed > div:nth-child(1) {
     -webkit-mask-image: linear-gradient(black 25%, transparent 25%);
     mask-image: linear-gradient(black 25%, transparent 25%);
-    animation: deconstructed1 5s infinite;
+    animation: deconstructed1 5s 5;
   }
   
   .deconstructed > div:nth-child(2) {
     -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
     mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
-    animation: deconstructed2 5s infinite;
+    animation: deconstructed2 5s 5;
   }
   
   .deconstructed > div:nth-child(3) {
      -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
     mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
-    animation: deconstructed3 5s infinite;
+    animation: deconstructed3 5s 5;
   }
   
   .deconstructed > div:nth-child(4) {
      -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
     mask-image: linear-gradient(transparent 75%, black 75%);
-    animation: deconstructed4 5s infinite;
+    animation: deconstructed4 5s 5;
   }
   
   @keyframes deconstructed1 {
     0% {
-      transform: translateX(100%);
+      transform: translateX(250%);
     }
     26% {
       transform: translateX(0%);
@@ -162,7 +184,7 @@ body {
   
   @keyframes deconstructed2 {
     0% {
-      transform: translateX(100%);
+      transform: translateX(250%);
     }
     24% {
       transform: translateX(0%);
@@ -177,7 +199,7 @@ body {
   
   @keyframes deconstructed3 {
     0% {
-      transform: translateX(100%);
+      transform: translateX(250%);
     }
     22% {
       transform: translateX(0%);
@@ -192,7 +214,7 @@ body {
   
   @keyframes deconstructed4 {
     0% {
-      transform: translateX(100%);
+      transform: translateX(250%);
     }
     20% {
       transform: translateX(0%);
@@ -204,3 +226,7 @@ body {
       transform: translateX(-135%);
     }
   }
+
+
+
+  

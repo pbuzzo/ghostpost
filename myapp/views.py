@@ -33,7 +33,7 @@ def addpost(request):
             )
             usr_email = data['email']
             unique_id = PostInput.objects.get(title=title)
-            message = f'Your password has been changed successfully! Your new delete URL for your post "{title}" is http://127.0.0.1:8000/{unique_id.post_key}/delete/. Enter it into your browser to access your post-deletion page. Thanks for posting!'
+            message = f'Your new delete URL for your post "{title}" is http://127.0.0.1:8000/{unique_id.post_key}/delete/. Enter it into your browser to access your post-deletion page. Thanks for posting!'
             # http://sayhelloworld.co/build-a-simple-django-contact-form-that-sends-emails/
             send_mail(
                 'Contact Form',

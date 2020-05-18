@@ -20,3 +20,6 @@ Resources and References:
 - https://stackoverflow.com/questions/28421887/django-email-with-smtp-gmail-smtpauthenticationerror-534-application-specific-pa/28421995
 - https://intellipaat.com/community/8615/python-django-gmail-smtp-setup
 - http://sayhelloworld.co/build-a-simple-django-contact-form-that-sends-emails/
+
+    CSS:
+- https://codepen.io/anon/pen/jqYyEZ
