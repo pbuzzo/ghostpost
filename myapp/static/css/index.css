@@ -73,6 +73,8 @@ h3 {
 body {
     font-family: "Raleway", sans-serif;
     background-image: url('https://revelwallpapers.net/media/wallpapers/tree-chair-alone-night-park.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 
@@ -228,5 +230,46 @@ body {
   }
 
 
+/* https://www.w3schools.com/css/css_dropdowns.asp */
+.sidenav {
+    width: 130px;
+    height: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    right: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
 
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #064579;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
   
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -6,10 +6,31 @@
 </head>
 
 <html>
+    <div class="sidenav">
+        <a href="/">Home</a>
+        <a href="/addpost">Add Post</a>
+        <div class="dropdown">
+            <a>Sort By</a>
+            <div class="dropdown-content">
+            <a href="/boasts/">‣Boasts</a>
+            <a href="/roasts/">‣Roasts</a>
+            <a href='/votes/'>‣Top Votes</a>
+            <a href='/'>‣All Posts</a>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
     <div class="form">
         <h1>Create A Ghost Post</h1>
-        <h3><a href="{% url 'homepage' %}">Homepage</a></h3>
-        <p>After creation, you will be emailed a unique post ID that you will be able to enter into the following url, in order to receive delete access to your post. Please keep this unique ID confidential. Check both spam and inbox folders for email. </p>
+        <!-- <h3><a href="{% url 'homepage' %}">Homepage</a></h3> -->
+        <p>After creation, you will be emailed a unique post ID that you will be able to enter into the following url, in order<BR> to receive delete access to your post. Please keep this unique ID confidential. Check both spam and inbox<BR> folders for email. </p>
         <h4>URL: http://127.0.0.1:8000/{UniqueID}/delete/</h4>
         <HR><HR>
 

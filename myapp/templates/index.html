@@ -8,6 +8,19 @@
 </head>
 
 <html>
+    <div class="sidenav">
+        <a href="/">Home</a>
+        <a href="/addpost">Add Post</a>
+        <div class="dropdown">
+            <a>Sort By</a>
+            <div class="dropdown-content">
+            <a href="/boasts/">‣Boasts</a>
+            <a href="/roasts/">‣Roasts</a>
+            <a href='/votes/'>‣Top Votes</a>
+            <a href='/posts/'>‣All Posts</a>
+            </div>
+        </div>
+    </div>
     <body>
         <div class="contone">
             <div class="deconstructed">
@@ -18,7 +31,7 @@
                 <div>GhostPost&nbsp;⊂(´･◡･⊂ )∘˚˳°</div>
             </div>
         </div>
-        <h3 class="create_post_link"><a href="{% url 'add post' %}">Create A New Ghost Post</a></h3>
+        <!-- <h3 class="create_post_link"><a href="{% url 'add post' %}">Create A New Ghost Post</a></h3> -->
         <HR>
         <h4>Search By:</h4>
         <div class="buttons">
